@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Fitness Programme Manager</title>
-<link rel="icon" type="image/png" href="icons/icon-192.png?v=28">
-<link rel="manifest" href="manifest.webmanifest?v=28">
+<link rel="icon" type="image/png" href="icons/icon-192.png?v=29">
+<link rel="manifest" href="manifest.webmanifest?v=29">
 <meta name="theme-color" content="#1769aa">
-<link rel="apple-touch-icon" href="icons/icon-192.png?v=28">
+<link rel="apple-touch-icon" href="icons/icon-192.png?v=29">
 <style>
 :root{--ink:#182433;--muted:#64748b;--line:#dbe3ec;--blue:#1769aa;--pale:#eef6fc;--bg:#f4f7fa}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
@@ -91,7 +91,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px
 
 .brand-print-header{display:none;align-items:center;gap:15px;border-bottom:2px solid var(--brand-accent,#1769aa);padding:8px 0 13px;margin-bottom:16px}.brand-print-header.has-brand{display:flex}.brand-print-header img,.brand-preview img{max-width:105px;max-height:75px;object-fit:contain}.brand-print-header .brand-name{font-weight:800;font-size:21px;color:var(--brand-accent,#1769aa)}.brand-print-header .brand-details{font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}.programme-document-heading{text-align:center;border-bottom:1px solid #bbb;padding-bottom:10px;margin-bottom:15px}.brand-preview{display:flex;align-items:center;gap:16px;min-height:85px;padding:16px;border:1px solid var(--line);border-radius:10px}
 @media print{.brand-print-header{print-color-adjust:exact;-webkit-print-color-adjust:exact}.brand-print-header.has-brand{display:flex!important}.brand-print-header img{display:block!important}#printPlan .brand-print-header img{display:block!important}.brand-print-header .brand-name{color:var(--brand-accent,#1769aa)!important}}
-@media print{body.print-challenge #challengePrintable{box-shadow:none;border:0}body.print-challenge #challengePrintable .report-part{break-inside:avoid}body.print-challenge #challengePrintable table{font-size:11px}} .challenge-calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-top:12px}.calendar-day{border:1px solid var(--line);border-radius:8px;padding:6px;min-height:88px;background:white;overflow-wrap:anywhere;font-size:12px}.calendar-day button{display:block;width:100%;text-align:left;background:#eaf3fa;border:0;border-radius:5px;margin-top:4px;padding:5px;font-size:11px;cursor:pointer}.calendar-day .done{background:#d8f0e1}.calendar-day .deadline{background:#ffedd6}.calendar-day .milestone{background:#e9e1fb}.calendar-empty{background:#f3f6f9}.calendar-weekday{text-align:center;font-weight:700;font-size:12px}@media(max-width:600px){.challenge-calendar{gap:2px}.calendar-day{min-height:74px;padding:3px;font-size:10px}.calendar-day button{padding:3px;font-size:9px}}@media print{body.print-calendar #calendar{display:block!important}body.print-calendar #calendar .no-print,body.print-calendar #calendar button{display:none!important}.calendar-day{break-inside:avoid}} </style></head>
+@media print{body.print-challenge #challengePrintable{box-shadow:none;border:0}body.print-challenge #challengePrintable .report-part{break-inside:avoid}body.print-challenge #challengePrintable table{font-size:11px}} .challenge-calendar{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-top:12px}.calendar-day{border:1px solid var(--line);border-radius:8px;padding:6px;min-height:88px;background:white;overflow-wrap:anywhere;font-size:12px}.calendar-day button{display:block;width:100%;text-align:left;background:#eaf3fa;border:0;border-radius:5px;margin-top:4px;padding:5px;font-size:11px;cursor:pointer}.calendar-day .done{background:#d8f0e1}.calendar-day .deadline{background:#ffedd6}.calendar-day .milestone{background:#e9e1fb}.calendar-empty{background:#f3f6f9}.calendar-weekday{text-align:center;font-weight:700;font-size:12px}@media(max-width:600px){.challenge-calendar{gap:2px}.calendar-day{min-height:74px;padding:3px;font-size:10px}.calendar-day button{padding:3px;font-size:9px}}@media print{body.print-calendar #calendar{display:block!important}body.print-calendar #calendar .no-print,body.print-calendar #calendar button{display:none!important}.calendar-day{break-inside:avoid}} </style><meta name="application-name" content="Fitness Manager"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"></head>
 <body>
 <header><h1>Fitness Programme Manager</h1><p>Client assessment · Training-style generator · Manual builder · Templates · Printouts</p></header>
 <main>
@@ -1557,5 +1557,5 @@ $('importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let 
 $('pickerEquipment').innerHTML=equipmentGroups.map(g=>`<option value="${esc(g)}">${esc(g)}</option>`).join('');$('pickerMuscle').innerHTML=muscleGroups.filter(g=>g!=='All').map(g=>`<option value="${esc(g)}">${esc(g)}</option>`).join('');refreshClients();if(state.selected)fillForm(activeClient());renderLibrary();renderProgramme();updateBuilder();renderReviews();updateStats();updateBrandHeaders();
 })();
 </script>
-<script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}</script>
+<script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(err=>console.warn('Service worker registration failed',err)));}</script>
 </body></html>
